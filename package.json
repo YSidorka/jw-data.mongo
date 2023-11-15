@@ -1,0 +1,23 @@
+{
+  "name": "@jw/data.mongo",
+  "version": "1.0.0",
+  "description": "Basic data module functions",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YSidorka/jw-data.mongo.git"
+  },
+  "keywords": [
+    "data.module"
+  ],
+  "author": "YSidorka",
+  "license": "MIT",
+  "dependencies": {
+    "@jw/const": "github:YSidorka/jw-const",
+    "mongoose": "^8.0.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.11.97"
+  }
+}
