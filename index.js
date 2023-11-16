@@ -39,7 +39,7 @@ async function sleep(time) {
   return new Promise((resolve) => setTimeout(() => resolve(), time)); // eslint-disable-line
 }
 function initConnection(options) {
-  const { dbUrl, dbName, uri, ..._options } = options;
+  const { dbUrl, dbName, uri, secret, ..._options } = options;
 
   const url = uri || `${dbUrl}${dbName}`;
   if (!dbUrl || !dbName) return null;
