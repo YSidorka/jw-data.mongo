@@ -126,13 +126,14 @@ function assignSchema(key, schema, connection) {
   try {
     if (!key) throw new Error('Invalid key');
     if (!schema || !(schema instanceof Schema)) throw new Error('Invalid schema');
-    if (!connection) throw new Error('Invalid connection');
 
-    const result = connection.model(key, schema);
-    return result;
+    connect(connection).then(connection => {
+      if (!connection) throw new Error('Invalid connection');
+      const result = connection.model(key, schema);
+      return result;
+    });
   } catch(err) {
     console.log(`Error assignSchema: ${err?.message || err}`);
-    return null;
   }
 }
 
